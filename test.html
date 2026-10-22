@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <title>抽獎系統 單元測試</title>
+  <style>
+    body { font-family: "Microsoft JhengHei", sans-serif; margin: 2rem; background: #fffaf3; color: #333; }
+    h1 { color: #b71c1c; }
+    #summary { font-size: 1.4rem; font-weight: bold; padding: .6rem 1rem; border-radius: 6px; }
+    #summary.pass { background: #e8f5e9; color: #1b5e20; }
+    #summary.fail { background: #ffebee; color: #b71c1c; }
+    li { padding: .25rem 0; }
+    li.pass { color: #2e7d32; }
+    li.fail { color: #c62828; font-weight: bold; }
+    li.section { list-style: none; margin: 1rem 0 .3rem -1.5rem; font-weight: bold; color: #b71c1c; }
+  </style>
+</head>
+<body>
+  <h1>抽獎系統 單元測試</h1>
+  <div id="summary">執行中…</div>
+  <ol id="results"></ol>
+
+  <script src="lib/xlsx.full.min.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/employees.js"></script>
+  <script src="js/prizes.js"></script>
+  <script src="js/draw.js"></script>
+  <script src="js/io.js"></script>
+  <script src="js/backup.js"></script>
+  <script src="tests/runner.js"></script>
+  <script src="tests/tests.js"></script>
+  <script src="tests/tests-io.js"></script>
+  <script src="tests/tests-stage3.js"></script>
+  <script>T.run();</script>
+</body>
+</html>

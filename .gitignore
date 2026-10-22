@@ -1,0 +1,9 @@
+# 開發工具設定
+.claude/
+
+# 名單、備份等實際資料不要上傳
+*.json
+!package.json
+*.xlsx
+*.xls
+*.csv

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>抽獎系統</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">福</span><span id="eventName"></span></div>
+    <nav class="tabs" id="tabs"></nav>
+    <div class="status">
+      <span class="chip" id="poolChip"></span>
+      <button class="chip" id="syncChip"></button>
+    </div>
+  </header>
+  <main id="panels"></main>
+
+  <script src="lib/xlsx.full.min.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/employees.js"></script>
+  <script src="js/prizes.js"></script>
+  <script src="js/draw.js"></script>
+  <script src="js/io.js"></script>
+  <script src="js/backup.js"></script>
+  <script src="js/ui/common.js"></script>
+  <script src="js/ui/employee-tab.js"></script>
+  <script src="js/ui/prize-tab.js"></script>
+  <script src="js/ui/settings-tab.js"></script>
+  <script src="js/ui/app.js"></script>
+  <script>LT.App.boot();</script>
+</body>
+</html>

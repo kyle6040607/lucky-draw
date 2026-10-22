@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <title>匯入匯出 手動測試</title>
+  <style>
+    body { font-family: "Microsoft JhengHei", sans-serif; margin: 2rem; background: #fffaf3; color: #333; max-width: 960px; }
+    h1 { color: #b71c1c; }
+    section { background: #fff; border: 1px solid #f0d9c0; border-radius: 8px; padding: 1rem 1.2rem; margin-bottom: 1rem; }
+    h2 { margin: 0 0 .6rem; font-size: 1.15rem; color: #8d1b1b; }
+    button, label.btn { font: inherit; padding: .35rem .9rem; margin: .2rem .3rem .2rem 0; border: 1px solid #b71c1c;
+      background: #fff; color: #b71c1c; border-radius: 4px; cursor: pointer; display: inline-block; }
+    button.primary { background: #b71c1c; color: #fff; }
+    button:disabled { opacity: .4; cursor: default; }
+    input[type=file] { display: none; }
+    table { border-collapse: collapse; margin-top: .5rem; width: 100%; }
+    th, td { border: 1px solid #eee; padding: .25rem .5rem; text-align: left; }
+    th { background: #fdf0e6; }
+    .note { color: #777; font-size: .9rem; }
+    .ok { color: #2e7d32; } .err { color: #c62828; }
+    #msg { min-height: 1.4em; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>匯入匯出 手動測試</h1>
+  <p class="note">此頁使用獨立的測試資料，不會影響正式抽獎資料。</p>
+  <p id="msg"></p>
+
+  <section>
+    <h2>1. 匯入員工名單</h2>
+    <button data-act="template-xlsx">下載範本（Excel）</button>
+    <button data-act="template-csv">下載範本（CSV）</button>
+    <label class="btn">選擇名單檔（.xlsx／.xls／.csv）<input type="file" id="importFile" accept=".xlsx,.xls,.xlsm,.csv"></label>
+    <div id="preview"></div>
+  </section>
+
+  <section>
+    <h2>2. 目前名單（<span id="count">0</span> 人參加／共 <span id="total">0</span> 人）</h2>
+    <button data-act="emp-xlsx">匯出名單（Excel）</button>
+    <button data-act="emp-csv">匯出名單（CSV）</button>
+    <button data-act="clear">清空測試資料</button>
+    <div id="employees"></div>
+  </section>
+
+  <section>
+    <h2>3. 抽獎紀錄匯出</h2>
+    <button data-act="demo-draw">產生示範抽獎（含一筆放棄、一筆撤銷）</button>
+    <button data-act="rec-xlsx">匯出紀錄（Excel）</button>
+    <button data-act="rec-csv">匯出紀錄（CSV）</button>
+    <span class="note">目前紀錄：<span id="drawCount">0</span> 筆</span>
+  </section>
+
+  <section>
+    <h2>4. 備份</h2>
+    <button data-act="backup">下載備份</button>
+    <label class="btn">從備份還原<input type="file" id="restoreFile" accept=".json"></label>
+    <p>
+      <button data-act="sync">選擇自動存檔檔案</button>
+      <button data-act="touch">模擬一次資料變動</button>
+      <span id="syncStatus" class="note">尚未設定</span>
+    </p>
+  </section>
+
+  <script src="lib/xlsx.full.min.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/employees.js"></script>
+  <script src="js/prizes.js"></script>
+  <script src="js/draw.js"></script>
+  <script src="js/io.js"></script>
+  <script src="js/backup.js"></script>
+  <script src="tests/io-test.js"></script>
+</body>
+</html>
